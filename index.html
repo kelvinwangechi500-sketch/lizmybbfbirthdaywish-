@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0205" />
+  <title>Happy Birthday Liz ♥</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="film-grain"></div>
+
+  <!-- ============ START ============ -->
+  <div id="start-screen">
+    <div class="start-hearts" aria-hidden="true"></div>
+    <div class="start-content">
+      <p class="start-pre">A film made with love, for</p>
+      <div class="start-logo">LIZ</div>
+      <p class="start-subtitle">Chapter Twenty-Two</p>
+      <button id="start-btn"><span class="play-tri"></span> Press play</button>
+      <p class="start-hint">Sound on &nbsp;•&nbsp; Fullscreen if you can &nbsp;•&nbsp; About 2½ minutes</p>
+    </div>
+  </div>
+
+  <div id="cinematic" class="hidden">
+
+    <!-- ============ LOGO INTRO ============ -->
+    <div id="intro">
+      <div class="intro-bg"></div>
+      <div class="intro-flare"></div>
+      <div class="logo-wrap">
+        <div class="logo-glow"></div>
+        <div class="logo-word" aria-label="LIZ">
+          <span class="lg l1">L</span><span class="lg l2">I</span><span class="lg l3">Z</span>
+        </div>
+      </div>
+      <div class="logo-sub">A LOVE STORY &nbsp;·&nbsp; A LIZ ORIGINAL</div>
+    </div>
+
+    <div id="transition"></div>
+
+    <!-- ============ THE FILM ============ -->
+    <div id="birthday">
+      <canvas id="fx"></canvas>
+      <div class="vignette"></div>
+      <div class="light-rays"></div>
+      <div class="moving-glow"></div>
+
+      <div class="stage">
+
+        <!-- 1 -->
+        <section class="act act-1">
+          <p class="line r" data-i="1">Every great story has a turning point.</p>
+          <p class="line line-accent r" data-i="2">This is hers.</p>
+        </section>
+
+        <!-- 2 -->
+        <section class="act act-2">
+          <p class="line r" data-i="1">Twenty-one chapters written.</p>
+          <p class="line line-accent r" data-i="2">The most beautiful one begins today.</p>
+        </section>
+
+        <!-- 3 countdown -->
+        <section class="act act-3">
+          <div class="count-wrap">
+            <svg class="count-ring" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring-bg" cx="50" cy="50" r="45"/>
+              <circle class="ring-fg" id="ring-fg" cx="50" cy="50" r="45"/>
+            </svg>
+            <span id="count-num">1</span>
+          </div>
+          <p class="count-label" id="count-label"></p>
+        </section>
+
+        <!-- 4 big 22 -->
+        <section class="act act-4">
+          <div class="twenty-two"><span class="digit">2</span><span class="digit">2</span></div>
+          <p class="twenty-two-label r">years of being loved more than you know</p>
+        </section>
+
+        <!-- 5 title -->
+        <section class="act act-5">
+          <h1 class="main-title">
+            <span class="word">Happy</span>
+            <span class="word">Birthday</span>
+          </h1>
+          <div class="name-container"><span class="name">Liz</span></div>
+          <div class="title-heart r">♥</div>
+        </section>
+
+        <!-- 6 photo -->
+        <section class="act act-6">
+          <div class="photo-container">
+            <div class="orbit" aria-hidden="true"></div>
+            <div class="photo-frame">
+              <img src="assets/liz.png" alt="Liz smiling" class="liz-photo" />
+              <div class="photo-shine"></div>
+            </div>
+            <div class="photo-glow"></div>
+          </div>
+          <p class="photo-caption r">Look at that smile.<br><em>This is the one that makes everyone's day better.</em></p>
+        </section>
+
+        <!-- 7 reasons -->
+        <section class="act act-7">
+          <p class="reasons-kicker r">22 reasons you are loved</p>
+          <div class="reason-card">
+            <div class="reason-num" id="reason-num">1</div>
+            <p class="reason-text" id="reason-text"></p>
+          </div>
+          <div class="reason-dots" id="reason-dots" aria-hidden="true"></div>
+        </section>
+
+        <!-- 8 credits -->
+        <section class="act act-8">
+          <div class="credits-mask">
+            <div class="credits-roll" id="credits-roll"></div>
+          </div>
+        </section>
+
+        <!-- 9 wish -->
+        <section class="act act-9">
+          <p class="wish-title r">Make a wish, Liz…</p>
+          <button id="candle-btn" class="cake" aria-label="Blow out the candle">
+            <svg viewBox="0 0 220 230" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="gPink" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff8fb1"/><stop offset="1" stop-color="#e0447a"/>
+                </linearGradient>
+                <linearGradient id="gCream" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#fff3e6"/><stop offset="1" stop-color="#ffd9c2"/>
+                </linearGradient>
+                <radialGradient id="gFlame" cx="50%" cy="70%" r="60%">
+                  <stop offset="0" stop-color="#fff7c2"/><stop offset=".5" stop-color="#ffc24a"/><stop offset="1" stop-color="#ff7a1a"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="110" cy="214" rx="100" ry="11" fill="#2a0a14"/>
+              <rect x="20" y="150" width="180" height="62" rx="10" fill="url(#gPink)"/>
+              <path d="M20 160 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 V150 H20Z" fill="url(#gCream)"/>
+              <rect x="50" y="102" width="120" height="52" rx="9" fill="url(#gCream)"/>
+              <path d="M50 112 q12 14 24 0 q12 14 24 0 q12 14 24 0 q12 14 24 0 q12 14 24 0 V102 H50Z" fill="#ff8fb1"/>
+              <g fill="#ffd27a"><circle cx="72" cy="176" r="4"/><circle cx="110" cy="182" r="4"/><circle cx="148" cy="176" r="4"/><circle cx="90" cy="130" r="3.5"/><circle cx="130" cy="130" r="3.5"/></g>
+              <rect x="104" y="62" width="12" height="42" rx="3" fill="#fff" />
+              <path d="M104 74 l12 -6 M104 84 l12 -6 M104 94 l12 -6" stroke="#ff6fa0" stroke-width="3"/>
+              <rect x="108.5" y="56" width="3" height="8" rx="1.5" fill="#3a2a2a"/>
+              <g class="flame">
+                <ellipse class="flame-glow" cx="110" cy="40" rx="30" ry="34" fill="#ffb03a" opacity=".25"/>
+                <path d="M110 18 C124 34 126 48 110 58 C94 48 96 34 110 18Z" fill="url(#gFlame)"/>
+              </g>
+              <g class="smoke" opacity="0">
+                <path d="M110 52 q-8 -14 2 -26 q10 -12 -2 -24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </button>
+          <p class="wish-hint" id="wish-hint">tap the candle to blow it out</p>
+          <p class="wish-after r" id="wish-after">Whatever you wished for —<br>everyone who loves you is rooting for it.</p>
+        </section>
+
+        <!-- 10 letter -->
+        <section class="act act-10">
+          <div class="letter" id="letter"></div>
+        </section>
+
+        <!-- 11 finale -->
+        <section class="act act-11">
+          <div class="big-heart r" id="big-heart">♥</div>
+          <h2 class="love-title r">You are loved.</h2>
+          <p class="love-sub r">Today, tomorrow, and every day in between.</p>
+          <p class="love-bday r">Happy 22nd Birthday, Liz ✦</p>
+          <div class="finale-actions r">
+            <button id="love-btn" class="btn-soft">tap to see how we love you♥</button>
+            <button id="replay-btn" class="btn-ghost">Watch again</button>
+          </div>
+          <p class="finale-hint r">(tap anywhere to make hearts)</p>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div class="hud" id="hud">
+      <button id="mute-btn" class="hud-btn" aria-label="Mute or unmute sound">🔊</button>
+      <button id="skip-btn" class="hud-btn hud-text" aria-label="Skip to the letter">Skip ›</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
